@@ -10,7 +10,6 @@ import com.exception.*;
 public class User {
 	
 	private Scanner in;
-
 	public User() throws UserException{
 		in = new Scanner(System.in);
     	boolean flag = true;
@@ -33,7 +32,6 @@ public class User {
 	    	PlayerManagementDAO playerManagementDAO = new PlayerManagementDAO();
 	    	RanksManagementDAO ranksManagementDAO = new RanksManagementDAO();
 	    	
-	    	
 	        switch(a) {
 	        	//create Player
 	        	//name, id, ranking, testRanking, ODIRanking, T20Ranking, location, age, dept	
@@ -50,9 +48,7 @@ public class User {
 	            }
 	            System.out.println();
 	            System.out.println("***************************");
-	            break;
-
-	        
+	            break;	        
 	        		
 	        	//update Player
 	        	case 2:	
@@ -67,7 +63,6 @@ public class User {
 			            System.out.println("1. Update Age");
 			            System.out.println("2. Update Department");
 			            int choice = in.nextInt();
-			            
 			            switch(choice) {
 				            case 1: 
 				            	System.out.println("Enter the age to be updated");
@@ -83,13 +78,11 @@ public class User {
 					        
 					        default:
 				        		break;
-
 			            }
 			            System.out.println("***************************");
 			            break;
-			        }
+			        }       
 
-	        		
 	        	//delete Player
 	        	case 3:
 			        System.out.println("Enter the player_id");
@@ -106,14 +99,13 @@ public class User {
 				        System.out.println("***************************");
 			        }
 			        break;
-	        		
+
 	        	//read Player
 	        	case 4: 
 	        		playerManagementDAO.readAllPlayers();
 	        		System.out.println("***************************");
 	        		break;
-	        		
-	        		
+
 	        	//print Test Players
 	        	case 5:
 	                System.out.println("****** TEST SQUAD ******");
@@ -144,9 +136,8 @@ public class User {
 	        		playerManagementDAO.topPlayers("ODI", "Bowler", 3);
 	                System.out.println();
 	                System.out.println("**********************");
-
 	        		break;
-	        		
+
 	        	//print T20 Players
 	        	case 7:
 	                System.out.println("****** T20 SQUAD ******");
@@ -160,9 +151,9 @@ public class User {
 //	        		Top 3 Bowlers
 	        		playerManagementDAO.topPlayers("T20", "Bowler", 3);
 	                System.out.println();
-	                System.out.println("**********************");
+	                System.out.println("***********************");
 	        		break;
-	        		
+
 	        	//exit statement
 	        	default:
 	        		flag = false;
